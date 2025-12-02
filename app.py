@@ -18,6 +18,8 @@ conexao = f"mysql+pymysql://{db_usuario}:{db_password}@{db_host}:{db_port}/{db_m
 app.config['SQLALCHEMY_DATABASE_URI'] = conexao
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db.init_app(app)
+
 app = Flask(__name__)
 @app.route('/')
 def index():
